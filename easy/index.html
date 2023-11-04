@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container">
+      <article>
+        <h1>Words</h1>
+        <button>Wygeneruj 50 losowych słów</button>
+      </article>
+      <article>
+        <button>Sortuj rosnąco</button>
+        <button>Sortuj malejąco</button>
+        <br />
+        <label>
+          Ile słów pokazać (0 - 50)
+          <input
+            type="range"
+            name=""
+            id=""
+            min="0"
+            max="50"
+            step="1"
+            value="50"
+          />
+        </label>
+
+        <br />
+        <h5>Wszystkie słowa</h5>
+        <ul>
+          <li>lorem1</li>
+          <li>lorem2</li>
+          <li>lorem3</li>
+          <li>lorem4</li>
+          <li>lorem5</li>
+        </ul>
+      </article>
+      <article>
+        <h2>Statystyki</h2>
+        <h4>Wszystkie długości słów: ?</h4>
+        <h4>Średnie długość słowa: ?</h4>
+      </article>
+
+      <article>
+        <h2>Operacje</h2>
+        <button>Usuń ostatnie słowo</button>
+        <button>Usuń słowa o parzystym indexie</button>
+      </article>
+      <article>
+        <h2>Dodaj słowo</h2>
+        <form>
+          <label>
+            <input type="text" placeholder="Podaj słowo" />
+            <button>Dodaj nowe słowo</button>
+          </label>
+        </form>
+      </article>
+    </main>
+  </body>
+</html>
