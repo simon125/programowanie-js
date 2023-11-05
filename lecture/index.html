@@ -7,7 +7,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
     <title>Document</title>
   </head>
   <body>
@@ -22,12 +22,12 @@
           </li>
           <li>Omówienie funkcji strzałkowych</li>
           <li>Wyjasnienie destrukturyzacji oraz spread operatora</li>
+          <li>document - trochę o DOMie - a czasem trochę więcej</li>
+          <li>Praca z algorytmami sortowania danych: w tym po stringach</li>
           <li>
             Praca z listami danych: mapowanie danych i filtracja danych z
             uwzględnieniem metod takich jak map, filter czy reduce
           </li>
-          <li>document - trochę o DOMie - a czasem trochę więcej</li>
-          <li>Praca z algorytmami sortowania danych: w tym po stringach</li>
           <br />
           <li>Wyjaśnienie czym jest this i jak się nim posługiwać</li>
           <br />
@@ -47,8 +47,29 @@
         </ul>
       </article>
 
-      <article><button id="click">Click me</button></article>
-      <article><h2>Tu będzie counter</h2></article>
+      <article>
+        <button id="przycisk">Click me</button>
+        <button id="generateList">Narysuj liste z liczbami</button>
+      </article>
+
+      <article>
+        <ul id="output"></ul>
+      </article>
+
+      <article>
+        <h2>Tu będzie counter</h2>
+        <input type="text" />
+        <button>click me</button>
+        <span id="counterOutput"></span>
+        <button id="increment">+1</button>
+        <button id="decrement">-1</button>
+      </article>
     </main>
+    <script>
+      function trelemorele() {
+        // console.log("Hej z HTMLA");
+      }
+    </script>
+    <script src="./index.js"></script>
   </body>
 </html>

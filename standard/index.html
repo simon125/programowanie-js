@@ -20,9 +20,9 @@
       </article>
       <article>
         <div class="flex align-center gap">
-          <button>Sortuj po zarobkach</button>
-          <button>Sortuj po profesji</button>
-          <select>
+          <button id="sortBySalary">Sortuj po zarobkach</button>
+          <button id="sortByProfession">Sortuj po profesji</button>
+          <select id="sortDir">
             <option value="asc" selected>Rosnąco</option>
             <option value="desc">Malejąco</option>
           </select>
@@ -96,13 +96,24 @@
       <article>
         <h2>Statystyki</h2>
         <h4>Personel</h4>
-        <p>Ilość devów: <b>?</b></p>
-        <p>Ilość designerów: <b>?</b></p>
-        <p>Ilość testerów: <b>?</b></p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr">
+          <p>Ilość devów: <b>?</b></p>
+          <p>Ilość designerów: <b>?</b></p>
+          <p>Ilość testerów: <b>?</b></p>
+        </div>
         <h4>Średnie wypłaty</h4>
-        <p>Devowie: <b>?</b></p>
-        <p>Designerzy: <b>?</b></p>
-        <p>Testerzy: <b>?</b></p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr">
+          <p>Devowie: <b>?</b></p>
+          <p>Designerzy: <b>?</b></p>
+          <p>Testerzy: <b>?</b></p>
+        </div>
+        <h4>Dane szczegółowe</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr">
+          <p>Najdroższy pracownik: <b>?</b></p>
+          <p>Najtańszy pracownik: <b>?</b></p>
+          <p>Wydatki roczne: <b>?</b></p>
+          <p>*Wydatki do konca roku: <b>?</b></p>
+        </div>
       </article>
 
       <article>
@@ -134,6 +145,6 @@
         </form>
       </article>
     </main>
-    <script src="./solution.js"></script>
+    <script src="./exercise.js"></script>
   </body>
 </html>

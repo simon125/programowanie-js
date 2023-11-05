@@ -4,9 +4,10 @@
  * Stwórz funkcje która wygeneruje 50 losowych pracowników i zapisze je w tablicy obiektów
  * gdzie obiektem jest pracownik
  *
- * docelowy kształt obiektu usera (czyli to pola ma mieć obiekt user) jest następjący
+ * docelowy kształt obiektu usera (czyli te pola ma mieć obiekt user) jest następujący
  *
- * const przykladowyUser = {
+ * const przykladowyUser =
+ * {
  *      name: "Test1",
  *      sallary: 2000,
  *      seniority: "senior",
@@ -39,6 +40,17 @@
 /**
  * MIEJSCE NA TWÓJ KOD START
  */
+
+let staff = [];
+
+const generateStaff = () => {
+  for (let i = 0; i < 50; i++) {
+    staff[i] = {
+      name: `Test ${i}`,
+      salary: Math.round(10000 * Math.random()),
+    };
+  }
+};
 
 /**
  * MIEJSCE NA TWÓJ KOD END
@@ -78,6 +90,23 @@
 /**
  * MIEJSCE NA TWÓJ KOD START
  */
+function randomIntFromInterval(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const levels = ["senior", "regular", "junior"];
+const professions = ["developer", "tester", "designer"];
+
+const assingProfessionsAndLevels = () => {
+  return staff.map((worker) => {
+    return {
+      ...worker,
+      profession: professions[randomIntFromInterval(0, 2)],
+      seniority: levels[randomIntFromInterval(0, 2)],
+    };
+  });
+};
 
 /**
  * MIEJSCE NA TWÓJ KOD END
@@ -137,6 +166,45 @@
  * MIEJSCE NA TWÓJ KOD START
  */
 
+const createTableRowsMap = (data) => {
+  const trs = data.map((worker, index, arr) => {
+    return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${worker.name}</td>
+                <td>${worker.profession}</td>
+                <td>${worker.salary}</td>
+                <td>
+                <button style="padding: 5px; margin: 0">&times;</button>
+                </td>
+            </tr>
+        `;
+  });
+
+  return trs.join("");
+};
+
+// const createTableRowsForEach = (data) => {
+//   let trs = [];
+//   data.forEach((worker, index, arr) => {
+//     trs.push(`
+//             <tr>
+//                 <td>${index + 1}</td>
+//                 <td>${worker.name}</td>
+//                 <td>${worker.profession}</td>
+//                 <td>${worker.salary}</td>
+//                 <td>
+//                 <button style="padding: 5px; margin: 0">&times;</button>
+//                 </td>
+//             </tr>
+//         `);
+//   });
+// };
+
+/**
+ * createTableRowsMap oraz createTableRowsForEach robią to samo - w tym przypadku mozemy używać to zamiennie
+ */
+
 /**
  * MIEJSCE NA TWÓJ KOD END
  */
@@ -168,6 +236,16 @@
 /**
  * MIEJSCE NA TWÓJ KOD START
  */
+
+const renderHTML = (htmlStructure, targetId) => {
+  const outputContainer = document.getElementById(targetId);
+  outputContainer.innerHTML = htmlStructure;
+};
+
+generateStaff();
+staff = assingProfessionsAndLevels();
+const htmlStructure = createTableRowsMap(staff);
+renderHTML(htmlStructure, "output");
 
 /**
  * MIEJSCE NA TWÓJ KOD END
@@ -211,6 +289,47 @@
 /**
  * MIEJSCE NA TWÓJ KOD START
  */
+const sortBySalaryBtn = document.getElementById("sortBySalary");
+const sortByProfessionBtn = document.getElementById("sortByProfession");
+const sortDirSelect = document.getElementById("sortDir");
+
+const sortBySalary = (data, direction) => {
+  const sortedData = [...data].sort((worker1, worker2) => {
+    if (direction === "desc") {
+      return worker2.salary - worker1.salary;
+    }
+    return worker1.salary - worker2.salary;
+  });
+
+  return sortedData;
+};
+
+sortBySalaryBtn.addEventListener("click", () => {
+  const direction = sortDirSelect.value;
+  const sortedBySalary = sortBySalary(staff, direction);
+  const htmlStructure = createTableRowsMap(sortedBySalary);
+  renderHTML(htmlStructure, "output");
+});
+
+const sortByProfession = (data, direction) => {
+  const sortedData = [...data].sort((worker1, worker2) => {
+    if (direction === "asc") {
+      return worker1.profession.localeCompare(worker2.profession);
+    }
+    return worker2.profession.localeCompare(worker1.profession);
+  });
+
+  return sortedData;
+};
+
+sortByProfessionBtn.addEventListener("click", () => {
+  const direction = sortDirSelect.value;
+  const sortedBySalary = sortByProfession(staff, direction);
+  const htmlStructure = createTableRowsMap(sortedBySalary);
+  renderHTML(htmlStructure, "output");
+});
+
+// sortByProfession(staff, "asc")
 
 /**
  * MIEJSCE NA TWÓJ KOD END
