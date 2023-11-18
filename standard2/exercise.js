@@ -167,6 +167,8 @@ const assingProfessionsAndLevels = () => {
  */
 
 const createTableRowsMap = (data) => {
+  console.log(data);
+
   const trs = data.map((worker, index, arr) => {
     return `
             <tr>
@@ -352,4 +354,78 @@ sortByProfessionBtn.addEventListener("click", () => {
  * STATYSTYKI
  *
  * Ćwiczenie filtrowania i liczenia - sprtyne podejscie do zliczania
+ */
+
+/**
+ * Statystyki - reduce - destrukturyzacja obiektów i/lub tablic
+ *
+ * Twoim zadaniem jest stworzenie jednej i/lub kilku klas która pozwoli na policzenie statystyk
+ *
+ ******* wyjaśnij sprytne podejście
+ *
+ * const przykladowyUser =
+ * {
+ *      name: "Test1",
+ *      sallary: 2000,
+ *      seniority: "senior",
+ *      profession: "developer"
+ * }
+ *
+ *
+ * do policzenia mamy:
+ *
+ * - ilść devów
+ * - ilść designerów
+ * - ilść testerów
+ *
+ * - średnia pensja devów
+ * - średnia pensja designerów
+ * - średnia pensja testerów
+ *
+ * * * * Dane szczegółowe:
+ * - njadroższy pracownik
+ * - najtańszy pracownik
+ * - wydatki roczne
+ * - wydatki do końca roku
+ *
+ *
+ * 1. spróbuj użyć funkcji reduce do obliczenia statystyk
+ * 2. stworzenie funkcji do policzenia pierwszych 3 statyk (ilosć dev/des/test) pozwoli
+ * na łatwiejsze policzenie średnich pencji - spróbuj wykorzystać ten fakt
+ *
+ *
+ */
+
+function countStaff() {}
+
+const countDevs = function () {
+  return staff.reduce((acc, person) => {
+    if (person.profession === "developer") {
+      return acc + 1;
+    } else {
+      return acc;
+    }
+  }, 0);
+};
+
+// const devsNumberOuput = document.getElementById('devsNumber');
+renderHTML(countDevs(), "devsNumber");
+
+console.log(countDevs());
+
+class Statistics {}
+
+/**
+ *
+ * Napisz klasę w JavaScript, która reprezentuje pracownika. Klasa powinna zawierać informacje takie jak imię, profesja i oczekiwania finansowe.
+ *
+ *
+ * Stwórz klasę o nazwie Pracownik.
+ * Użyj konstruktora do ustawienia właściwości klasy takich jak imie, profesja i oczekiwaniaFinansowe.
+ * Dodaj metodę informacje(), która zwraca string zawierający informacje o pracowniku w formie czytelnego komunikatu.
+ *
+ * Do pobrania potrzebnych wartości wykorzystaj formularz - w pliku index.html
+ *
+ * Obsłuż formularz, utwórz instancję klasy Pracownik na podstawie danych wprowadzonych przez użytkownika po naciśnięciu przycisku, a następnie wyświetl informacje o pracowniku.
+ *
  */
