@@ -1,0 +1,159 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container">
+      <article>
+        <h1>ACME - company</h1>
+        <button id="generateStaff">Wygeneruj 50 losowych pracowników</button>
+        <button id="assingRoles">Przypisz losowe profesje pracownikom</button>
+        <button id="renderStaff">Wyświetl pracowników</button>
+      </article>
+      <article>
+        <div class="flex align-center gap">
+          <button id="sortBySalary">Sortuj po zarobkach</button>
+          <button id="sortByProfession">Sortuj po profesji</button>
+          <select id="sortDir">
+            <option value="asc" selected>Rosnąco</option>
+            <option value="desc">Malejąco</option>
+          </select>
+        </div>
+        <label class="mt-10">
+          Ilu pracowników pokazać (0 - 50)
+          <input
+            type="range"
+            name=""
+            id=""
+            min="0"
+            max="50"
+            step="1"
+            value="50"
+          />
+        </label>
+
+        <p class="mt-10">Jakich użytkowników pokazać?</p>
+        <div class="flex align-center gap justify-between">
+          <label>
+            <input type="radio" name="profession" value="all" checked />
+            Wszyscy
+          </label>
+          <label>
+            <input type="radio" name="profession" value="developer" />
+            Developerzy
+          </label>
+          <label>
+            <input type="radio" name="profession" value="designer" />
+            Desginerzy
+          </label>
+          <label>
+            <input type="radio" name="profession" value="tester" />
+            Testerzy
+          </label>
+        </div>
+
+        <br /><br /><br />
+        <table class="mt-10">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Profession</th>
+              <th>Salary</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="output">
+            <tr>
+              <td>1</td>
+              <td>John</td>
+              <td>Developer</td>
+              <td>2000</td>
+              <td>
+                <button style="padding: 5px; margin: 0">&times;</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jane</td>
+              <td>Designer</td>
+              <td>2200</td>
+              <td>
+                <button style="padding: 5px; margin: 0">&times;</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <article>
+        <h2>Statystyki</h2>
+        <h4>Personel</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr">
+          <p>Ilość devów: <b>?</b></p>
+          <p>Ilość designerów: <b>?</b></p>
+          <p>Ilość testerów: <b>?</b></p>
+        </div>
+        <h4>Średnie wypłaty</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr">
+          <p>Devowie: <b>?</b></p>
+          <p>Designerzy: <b>?</b></p>
+          <p>Testerzy: <b>?</b></p>
+        </div>
+        <h4>Dane szczegółowe</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr">
+          <p>Najdroższy pracownik: <b>?</b></p>
+          <p>Najtańszy pracownik: <b>?</b></p>
+          <p>Wydatki roczne: <b>?</b></p>
+          <p>*Wydatki do konca roku: <b>?</b></p>
+        </div>
+      </article>
+
+      <article>
+        <h2>Operacje</h2>
+        <h4>Podwyżki</h4>
+        <input
+          type="text"
+          placeholder="Wpisz procent podwyżki używając ułamka dziesiętnego (np. 0.5 = 50%)"
+        />
+        <button>Zatwierdź</button>
+        <button>Zwolnij developerów</button>
+        <button>Zwolnij testerów</button>
+        <button>Zwolnij desingerów</button>
+      </article>
+      <article>
+        <h2>Dodaj nowego pracownika</h2>
+        <form id="addWorker">
+          <label>
+            <input
+              name="name"
+              type="text"
+              placeholder="Podaj imię pracownika"
+            />
+            <select name="profession">
+              <option value="" hidden>Wybierz profesje</option>
+              <option value="tester" selected>Tester</option>
+              <option value="developer" selected>Developer</option>
+              <option value="desinger">Designer</option>
+            </select>
+            <input
+              name="salary"
+              type="text"
+              placeholder="Oczkiwania finansowe (liczba)"
+            />
+            <button>Dodaj nowego pracownika</button>
+          </label>
+        </form>
+      </article>
+    </main>
+    <!-- <script src="./exercise.js"></script> -->
+    <script src="./solution.js"></script>
+  </body>
+</html>

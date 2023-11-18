@@ -1,0 +1,71 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container">
+      <article>
+        <h1>Words</h1>
+        <button id="generateWords">Wygeneruj 50 losowych słów</button>
+        <button id="generateHtml">
+          Wygeneruj strukture HTMLowa i wstaw na stronie
+        </button>
+      </article>
+      <article>
+        <button id="ascSort">Sortuj rosnąco</button>
+        <button id="descSort">Sortuj malejąco</button>
+
+        <button id="sortByLengthAsc">Sortuj po długości rosnąco</button>
+        <button id="sortByLengthDesc">Sortuj po długości malejąco</button>
+        <br />
+        <label>
+          Ile słów pokazać (0 - 50)
+          <input
+            type="range"
+            name=""
+            id=""
+            min="0"
+            max="50"
+            step="1"
+            value="50"
+          />
+        </label>
+
+        <br />
+        <h5>Wszystkie słowa</h5>
+        <ul id="output"></ul>
+      </article>
+      <article>
+        <h2>Statystyki</h2>
+        <h4>Wszystkie długości słów: ?</h4>
+        <h4>Średnie długość słowa: ?</h4>
+        <h4>*Ilość słów ze wskazanym znakiem: ?</h4>
+        <input type="text" placeholder="wpisz znak" />
+      </article>
+
+      <article>
+        <h2>Operacje</h2>
+        <button>Usuń ostatnie słowo</button>
+        <button>Usuń słowa o parzystym indexie</button>
+      </article>
+      <article>
+        <h2>Dodaj słowo</h2>
+        <form>
+          <label>
+            <input type="text" placeholder="Podaj słowo" />
+            <button>Dodaj nowe słowo</button>
+          </label>
+        </form>
+      </article>
+    </main>
+    <script src="./exercise.js"></script>
+  </body>
+</html>
