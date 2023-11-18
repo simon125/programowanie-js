@@ -13,13 +13,3 @@
     console.log(silnia(5)); // Powinno zwrócić 120
     console.log(silnia(7)); // Powinno zwrócić 5040
  */
-
-function silnia(n) {
-  // Warunek zakończenia rekurencji
-  if (n === 0) {
-    return 1;
-  } else {
-    // Wywołanie rekurencyjne
-    return n * silnia(n - 1);
-  }
-}
